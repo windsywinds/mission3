@@ -2,8 +2,8 @@ const express = require("express");
 const cors = require("cors")
 const bodyParser = require("body-parser");
 
-const routetest = require ("./src/routes/routetest")
-const calculatevalue = require("./src/routes/calculateValue")
+const routetest = require ("./routes/routetest")
+const calculatevalue = require("./routes/calculateValue")
 
 
 
