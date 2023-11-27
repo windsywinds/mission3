@@ -9,8 +9,7 @@ calculatevalue.use(bodyParser.json());
 calculatevalue.post("/", async (req, res) => {
     console.log("Request on calculate Value!")
     try {
-        const model = req.body;
-        const year = req.body;
+      const { model, year } = req.body;
         if (typeof model !== "string" || typeof year !== "number" || year < 0) {
           return res.status(400).json({ error: "Invalid input. Please provide a valid model and year." });
         }
