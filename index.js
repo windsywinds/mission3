@@ -1,27 +1,12 @@
 
-const express = require("express");
-const cors = require("cors")
-const bodyParser = require("body-parser");
-
-const routetest = require ("./routes/routetest")
-const calculatevalue = require("./routes/calculateValue")
-
-const server = express();
-server.use(bodyParser.json());
-server.use(cors());
+const { server } = require('./server'); 
 
 
-server.use("/routetest/", routetest);
-server.use("/calculatevalue/", calculatevalue);
 
-//Allow a test route and response to ensure connection and operation between testing and server
-server.use("/test", (req, res) => {
-  //.use to allow both post and get
-  const testResponse = "You're receiving a response from Azure!";
-  res.json(testResponse);
-});
 const PORT = process.env.PORT || 8000;
 
 server.listen(PORT, () => {
   console.log(`Server started and listening on port ${PORT}`);
 });
+
+
