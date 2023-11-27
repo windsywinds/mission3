@@ -7,10 +7,6 @@ const bodyParser = require("body-parser");
 const calculaterisk = express.Router();
 calculatevalue.use(bodyParser.json());
 
-
-
-  
-
 calculaterisk.post("/", async (req, res) => {
     const { claim_history } = req.body;
     if (typeof claim_history !== "string") {
