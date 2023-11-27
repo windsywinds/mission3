@@ -17,8 +17,6 @@ server.get("/", (req, res) => {
     <p>/routetest/</p> Working
     <p>/calculatevalue/</p> not working
     <p>/calculaterisk/</p> not working
-    
-  
   `);
 });
 
