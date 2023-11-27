@@ -27,21 +27,8 @@ jobs:
           npm install
           npm run build --if-present
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
-        with:
-          name: node-app
-          path: .
-
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist-without-markdown
-          path: |
-            dist
-            !dist/**/*.md
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
-          name: code-coverage-report
-          path: output/test/code-coverage.html
+        name: code-coverage-report
+        path: coverage/lcov-report/*
