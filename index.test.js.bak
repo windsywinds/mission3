@@ -182,3 +182,4 @@ describe('Check API2 and the calculateRisk function against test cases', () => {
   });
 });
 
+
