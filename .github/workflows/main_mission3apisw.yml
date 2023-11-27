@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - mission3apisw
+name: Build and deploy Node.js app to Azure Web App - mission3turnersapi
 
 on:
   push:
@@ -59,4 +59,4 @@ jobs:
           app-name: 'mission3apisw'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0CDEA1F64EB747FAA379111BF4075AF8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_MT3API }}
