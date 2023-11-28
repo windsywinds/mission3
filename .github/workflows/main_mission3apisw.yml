@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "version=$(git describe --tags --always)" >> $GITHUB_ENV
           echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-        shell: baship
+        shell: bash
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
