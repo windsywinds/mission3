@@ -48,7 +48,7 @@ jobs:
         with:
           name: code-report-${{ steps.set-variables.outputs.version }}
           path: |
-            coverage/${{ env.version }}/*
+            coverage/${{ env.timestamp }}-${{ env.version }}/*
       - name: Debug output
         run: |
           echo "version: $version"
