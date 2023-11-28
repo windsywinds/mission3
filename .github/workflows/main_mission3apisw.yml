@@ -17,8 +17,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Node.js version
-        uses: actions/setup-nod          node-version: "20.x"
-node-version: '20.x'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
 
       - name: npm install, build, and test
         run: |
@@ -46,9 +47,4 @@ node-version: '20.x'
         uses: actions/upload-artifact@v3
         with:
         name: code-report-${{ steps.set-variables.outputs.version }}-${{ steps.set-variables.outputs.timestamp }}
-          path: coverage/*
-          
-      - name: Debug output
-        run: |
-          echo "version: $version"
-          echo "timestamp: $timestamp"*
+          path: coverage/${{ steps.set-variables.outputs.timestamp }}/*
