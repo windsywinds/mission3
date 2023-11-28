@@ -47,6 +47,11 @@ jobs:
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ steps.set-variables.outputs.folder_name }}
+          name: code-report-${{ steps.set-variables.outputs.folder_name }}
           path: |
-            coverage/
+            coverage/*
+      - name: Debug output
+        run: |
+          echo "version: $version"
+          echo "timestamp: $timestamp"
+          echo "folder_name: $folder_name"
