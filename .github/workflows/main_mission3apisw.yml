@@ -47,6 +47,7 @@ node-version: '20.x'
         with:
         name: code-report-${{ steps.set-variables.outputs.version }}-${{ steps.set-variables.outputs.timestamp }}
           path: coverage/*
+          
       - name: Debug output
         run: |
           echo "version: $version"
