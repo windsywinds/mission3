@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const bodyParser = require("body-parser");
-const router = express.Router()
-router.use(bodyParser.json())
+const router = express.Router();
+router.use(bodyParser.json());
 
 router.post("/", async (req, res) => {
-    console.log("Request on calculate Risk!")
-    const { claim_history } = req.body;
-    try {
+  console.log("Request on calculate Risk!");
+  const { claim_history } = req.body;
+  try {
     if (typeof claim_history !== "string") {
       res.status(400).json({ error: "there is an error" });
       return;
@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
     for (const word of words) {
       if (
         triggerWords.some((trigger) =>
-          word.toLowerCase().includes(trigger.toLowerCase())
+          word.toLowerCase().includes(trigger.toLowerCase()),
         )
       ) {
         count++;
@@ -34,13 +34,11 @@ router.post("/", async (req, res) => {
     }
     const riskResult = count;
     res.status(200).json({ risk_rating: riskResult });
-    } catch (error) {
-      console.error("Error in calculateRisk route:", error);
-      res.status(400).json({ error: "there is an error" });
-      return;
-      }
-
+  } catch (error) {
+    console.error("Error in calculateRisk route:", error);
+    res.status(400).json({ error: "there is an error" });
+    return;
+  }
 });
 
-module.exports = router
-
+module.exports = router;

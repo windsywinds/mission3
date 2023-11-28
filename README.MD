@@ -1,4 +1,3 @@
-
 <a name="readme-top"></a>
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -6,12 +5,9 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-
-
-
 <br />
 <div align="center">
- 
+
 
 <h3 align="center">Mission 3</h3>
 
@@ -27,8 +23,6 @@
     ·
     
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -49,51 +43,52 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 An API that can be called to determine the value of a car, the risk rating of the owner, and the insurance premium they will pay.
 
-
-
-
 ### Built With
 
-* Javascript
-* Express JS
-* Microsoft Azure
-* Jest testing library with Supertest
-
+- Javascript
+- Express JS
+- Microsoft Azure
+- Jest testing library with Supertest
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Installation
 
 1. Clone repo
-  ```sh
-  gitclone https://github.com/windsywinds/mission3.git
-  ```
-2. Install packages 
-  ```sh
-  npm i
-  ```
+
+```sh
+gitclone https://github.com/windsywinds/mission3.git
+```
+
+2. Install packages
+
+```sh
+npm i
+```
+
 3. Run dev server - requests can be made while running
-  ```sh
-  npm run dev
-  ```
+
+```sh
+npm run dev
+```
+
 4. Run tests - sever cannot be running or test must be made on new port
-  ```sh
-  npm test
-  ```
+
+```sh
+npm test
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [vite-url]: https://vitejs.dev/
 [contributors-shield]: https://img.shields.io/github/contributors/windsywinds/mission3.svg?style=for-the-badge
 [contributors-url]: https://github.com/windsywinds/mission3/graphs/contributors
@@ -124,4 +119,4 @@ An API that can be called to determine the value of a car, the risk rating of th
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[JQuery-url]: https://jquery.com
