@@ -37,15 +37,16 @@ jobs:
           path: release.zip
 # add variables for the name of the folder being added as an artifact
       - name: Set Name Variables
+        id: set-variables
         run: |
-          echo "version=$(git describe)" >> $GITHUB_ENV
-          cd .release
-          echo "folder_name=$(ls -d */ | sed 's:/*$::')" >> $GITHUB_ENV
+          echo "version=$(git describe --tags --always)"
+          echo "timestamp=$(date +'%Y%m%d%H%M%S')"
+          echo "folder_name=coverage-report-$version-$timestamp"
+          echo "##[set-output name=folder_name;]$folder_name"
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
-          name: coverage-report-${{ env.version }}
+          name: ${{ steps.set-variables.outputs.folder_name }}
           path: |
-            output/*/
-            !.release/*
+            coverage/
