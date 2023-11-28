@@ -35,11 +35,17 @@ jobs:
         with:
           name: node-app
           path: release.zip
+# add variables for the name of the folder being added as an artifact
+      - name: Set Name Variables
+        run: |
+          echo "version=$(git describe)" >> $GITHUB_ENV
+          cd .release
+          echo "folder_name=$(ls -d */ | sed 's:/*$::')" >> $GITHUB_ENV
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
-          name: code-coverage-report
+          name: coverage-report-${{ env.version }}
           path: |
-            .release/*/
+            output/*/
             !.release/*
