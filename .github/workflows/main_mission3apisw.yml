@@ -1,3 +1,6 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy Node.js app to Azure Web App - m3turnersapicv
 
 on:
@@ -16,7 +19,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '20.x'
+          node-version: "20.x"
 
       - name: npm install, build, and test
         run: |
@@ -33,15 +36,33 @@ jobs:
           name: node-app
           path: release.zip
 
-      - name: Set Name Variables
-        id: set-variables
-        run: |
-          echo "version=$(git describe --tags --always)" >> $GITHUB_ENV
-          echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-        shell: bash
-
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
-          name: code-report-${{ steps.set-variables.outputs.version }}-${{ steps.set-variables.outputs.timestamp }}
-          path: coverage/${{ steps.set-variables.outputs.timestamp }}/*
+          name: code-coverage-report
+          path: coverage/*
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: node-app
+
+      - name: Unzip artifact for deployment
+        run: unzip release.zip
+      
+      - name: 'Deploy to Azure Web App'
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'm3turnersapicv'
+          slot-name: 'Production'
+          package: .
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_M3CVAPI }}
