@@ -41,18 +41,15 @@ jobs:
         run: |
           echo "version=$(git describe --tags --always)" >> $GITHUB_ENV
           echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-          echo "folder_name=coverage-report-$version-$timestamp" >> $GITHUB_ENV
-          echo "folder_name=$folder_name" >> $GITHUB_ENV
         shell: bash
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
-          name: code-report-${{ steps.set-variables.outputs.folder_name }}
+          name: code-report-${{ steps.set-variables.outputs.version }}
           path: |
-            coverage/*
+            coverage/${{ env.version }}/*
       - name: Debug output
         run: |
           echo "version: $version"
           echo "timestamp: $timestamp"
-          echo "folder_name: $folder_name"
