@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App - m3turnersapicv
 
 on:
@@ -35,7 +32,7 @@ jobs:
         with:
           name: node-app
           path: release.z
-# add variables for the name of the folder being added as an artifact
+
       - name: Set Name Variables
         id: set-variables
         run: |
@@ -46,5 +43,5 @@ jobs:
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
-        name: code-report-${{ steps.set-variables.outputs.version }}-${{ steps.set-variables.outputs.timestamp }}
+          name: code-report-${{ steps.set-variables.outputs.version }}-${{ steps.set-variables.outputs.timestamp }}
           path: coverage/${{ steps.set-variables.outputs.timestamp }}/*
