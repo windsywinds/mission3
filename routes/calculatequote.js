@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const router = express.Router();
 router.use(bodyParser.json());
 router.post("/", async (req, res) => {
-  console.log("Request on calculate Quote!");
   try {
     const value = req.body.car_value;
     const risk = req.body.risk_rating;

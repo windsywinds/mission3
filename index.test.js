@@ -234,7 +234,7 @@ describe("Check API3 and the calculatequote function against test cases", () => 
     const expectedResult = { error: "there is an error" };
     expect(response.body).toEqual(expectedResult);
   });
-  it("#4 should return an error if nothing is sent", async () => {
+  it("#5 should return an error if nothing is sent", async () => {
     const response = await request(app)
       .post("/calculatequote")
       .send({

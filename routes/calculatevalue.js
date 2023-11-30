@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 router.use(bodyParser.json());
-
 router.post("/", async (req, res) => {
   console.log("Request on calculate Value!");
   try {
@@ -26,12 +25,9 @@ router.post("/", async (req, res) => {
     }
     // Multiply the alphanumeric total by 100 and add the year to find carValue
     const carValue = modelValue * 100 + year;
-
     return res.status(200).json({ car_value: carValue });
   } catch (error) {
-    console.error("Error in calculateValue route:", error);
     return res.status(500).json({ error: "Error in calculateValue route." });
   }
 });
-
 module.exports = router;

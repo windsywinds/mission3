@@ -34,9 +34,7 @@ router.post("/", async (req, res) => {
     const riskResult = count;
     return res.status(200).json({ risk_rating: riskResult });
   } catch (error) {
-    console.error("Error in calculateRisk route:", error);
-    res.status(400).json({ error: "there is an error" });
-    return;
+    return res.status(400).json({ error: "there is an error" });
   }
 });
 module.exports = router;
