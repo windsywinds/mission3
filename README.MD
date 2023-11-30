@@ -47,7 +47,7 @@
 
 ## About The Project
 
-An API that can be called to determine the value of a car, the risk rating of the owner, and the insurance premium they will pay.
+An API that can be called to determine the value of a car, the risk rating of the owner, and the insurance premium they will pay. Included is a YML for github actions to automatically deploy to Azure Services each time the repo is updated.
 
 ### Built With
 
