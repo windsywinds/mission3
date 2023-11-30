@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 router.use(bodyParser.json());
-
 router.post("/", async (req, res) => {
   console.log("Request on calculate Risk!");
   const { claim_history } = req.body;
@@ -33,12 +32,11 @@ router.post("/", async (req, res) => {
       count = 5;
     }
     const riskResult = count;
-    res.status(200).json({ risk_rating: riskResult });
+    return res.status(200).json({ risk_rating: riskResult });
   } catch (error) {
     console.error("Error in calculateRisk route:", error);
     res.status(400).json({ error: "there is an error" });
     return;
   }
 });
-
 module.exports = router;

@@ -4,6 +4,7 @@ const testRouter = require("./routes/routetest");
 const calculatevalue = require("./routes/calculatevalue");
 const calculaterisk = require("./routes/calculaterisk");
 const calculatequote = require("./routes/calculatequote");
+const supertest = require("supertest");
 const app = express();
 app.use(express.json());
 
@@ -144,7 +145,7 @@ describe("Check API2 and the calculateRisk function against test cases", () => {
     };
     expect(response.body).toEqual(expectedResult);
   });
-  it("#5 should return a 5 as the maximum rating", async () => {
+  it("#5 should not identify non-exact matched words", async () => {
     const response = await request(app)
       .post("/calculaterisk")
       .send({
@@ -186,7 +187,7 @@ describe("Check API3 and the calculatequote function against test cases", () => 
     expect(calculatequote).toBeDefined(); //Checks it is a defined value/type - is boolean
     expect(typeof calculatequote).toBe("function"); //Checked it is a function
   });
-  it("#1 should return the given example resulting in 3", async () => {
+  it("#1 should return a correct result", async () => {
     const response = await request(app)
       .post("/calculatequote")
       .send({
@@ -198,6 +199,48 @@ describe("Check API3 and the calculatequote function against test cases", () => 
       monthly_premium: 8365.862500000001,
       yearly_premium: 100390.35,
     };
+    expect(response.body).toEqual(expectedResult);
+  });
+  it("#2 should return an error if value is not a number", async () => {
+    const response = await request(app)
+      .post("/calculatequote")
+      .send({
+        car_value: "Civic",
+        risk_rating: 3,
+      })
+      .expect(400);
+    const expectedResult = { error: "there is an error" };
+    expect(response.body).toEqual(expectedResult);
+  });
+  it("#3 should return an error if risk is not a number", async () => {
+    const response = await request(app)
+      .post("/calculatequote")
+      .send({
+        car_value: 5,
+        risk_rating: "Civic",
+      })
+      .expect(400);
+    const expectedResult = { error: "there is an error" };
+    expect(response.body).toEqual(expectedResult);
+  });
+  it("#4 should return an error if both value and risk are not numbers", async () => {
+    const response = await request(app)
+      .post("/calculatequote")
+      .send({
+        car_value: "Civic",
+        risk_rating: "Car",
+      })
+      .expect(400);
+    const expectedResult = { error: "there is an error" };
+    expect(response.body).toEqual(expectedResult);
+  });
+  it("#4 should return an error if nothing is sent", async () => {
+    const response = await request(app)
+      .post("/calculatequote")
+      .send({
+      })
+      .expect(400);
+    const expectedResult = { error: "there is an error" };
     expect(response.body).toEqual(expectedResult);
   });
 });
