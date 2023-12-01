@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701322870534" clover="3.2.0">
-  <project timestamp="1701322870535" name="All files">
-    <metrics statements="70" coveredstatements="66" conditionals="21" coveredconditionals="21" methods="5" coveredmethods="5" elements="96" coveredelements="92" complexity="0" loc="70" ncloc="70" packages="1" files="4" classes="4"/>
-    <file name="calculatequote.js" path="H:\Missionready\mission3\routes\calculatequote.js">
-      <metrics statements="16" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+<coverage generated="1701396510952" clover="3.2.0">
+  <project timestamp="1701396510952" name="All files">
+    <metrics statements="68" coveredstatements="68" conditionals="21" coveredconditionals="21" methods="5" coveredmethods="5" elements="94" coveredelements="94" complexity="0" loc="68" ncloc="68" packages="1" files="4" classes="4"/>
+    <file name="calculatequote.js" path="J:\Missionready\_COMPLETED\mission3\routes\calculatequote.js">
+      <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
-      <line num="6" count="6" type="stmt"/>
-      <line num="7" count="6" type="stmt"/>
-      <line num="8" count="6" type="stmt"/>
-      <line num="9" count="6" type="cond" truecount="4" falsecount="0"/>
-      <line num="10" count="5" type="stmt"/>
+      <line num="6" count="5" type="stmt"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="8" count="5" type="stmt"/>
+      <line num="9" count="5" type="cond" truecount="4" falsecount="0"/>
+      <line num="10" count="4" type="stmt"/>
       <line num="12" count="1" type="stmt"/>
       <line num="13" count="1" type="stmt"/>
       <line num="14" count="1" type="stmt"/>
       <line num="18" count="1" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
+      <line num="20" count="4" type="stmt"/>
       <line num="23" count="1" type="stmt"/>
     </file>
-    <file name="calculaterisk.js" path="H:\Missionready\mission3\routes\calculaterisk.js">
-      <metrics statements="26" coveredstatements="25" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+    <file name="calculaterisk.js" path="J:\Missionready\_COMPLETED\mission3\routes\calculaterisk.js">
+      <metrics statements="25" coveredstatements="25" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -33,48 +33,46 @@
       <line num="8" count="7" type="stmt"/>
       <line num="9" count="7" type="cond" truecount="2" falsecount="0"/>
       <line num="10" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="6" type="stmt"/>
       <line num="13" count="6" type="stmt"/>
-      <line num="14" count="6" type="stmt"/>
-      <line num="16" count="6" type="stmt"/>
-      <line num="18" count="6" type="stmt"/>
-      <line num="19" count="50" type="cond" truecount="2" falsecount="0"/>
-      <line num="21" count="206" type="stmt"/>
-      <line num="24" count="21" type="stmt"/>
-      <line num="28" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="29" count="2" type="stmt"/>
-      <line num="31" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="32" count="1" type="stmt"/>
+      <line num="15" count="6" type="stmt"/>
+      <line num="17" count="6" type="stmt"/>
+      <line num="18" count="50" type="cond" truecount="2" falsecount="0"/>
+      <line num="20" count="206" type="stmt"/>
+      <line num="23" count="21" type="stmt"/>
+      <line num="27" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="28" count="2" type="stmt"/>
+      <line num="30" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="33" count="6" type="stmt"/>
       <line num="34" count="6" type="stmt"/>
-      <line num="35" count="6" type="stmt"/>
-      <line num="37" count="0" type="stmt"/>
-      <line num="40" count="1" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
     </file>
-    <file name="calculatevalue.js" path="H:\Missionready\mission3\routes\calculatevalue.js">
-      <metrics statements="21" coveredstatements="19" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>
+    <file name="calculatevalue.js" path="J:\Missionready\_COMPLETED\mission3\routes\calculatevalue.js">
+      <metrics statements="20" coveredstatements="20" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="5" type="stmt"/>
       <line num="7" count="5" type="stmt"/>
       <line num="8" count="5" type="stmt"/>
-      <line num="9" count="5" type="stmt"/>
-      <line num="10" count="5" type="cond" truecount="5" falsecount="0"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="18" count="3" type="stmt"/>
-      <line num="20" count="3" type="stmt"/>
-      <line num="21" count="3" type="stmt"/>
-      <line num="22" count="14" type="stmt"/>
-      <line num="23" count="14" type="cond" truecount="4" falsecount="0"/>
-      <line num="24" count="11" type="stmt"/>
-      <line num="28" count="3" type="stmt"/>
-      <line num="29" count="3" type="stmt"/>
-      <line num="31" count="0" type="stmt"/>
-      <line num="32" count="0" type="stmt"/>
-      <line num="35" count="1" type="stmt"/>
+      <line num="9" count="5" type="cond" truecount="5" falsecount="0"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="16" count="3" type="stmt"/>
+      <line num="17" count="14" type="stmt"/>
+      <line num="18" count="14" type="cond" truecount="4" falsecount="0"/>
+      <line num="19" count="11" type="stmt"/>
+      <line num="23" count="3" type="stmt"/>
+      <line num="24" count="3" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
     </file>
-    <file name="routetest.js" path="H:\Missionready\mission3\routes\routetest.js">
+    <file name="routetest.js" path="J:\Missionready\_COMPLETED\mission3\routes\routetest.js">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>

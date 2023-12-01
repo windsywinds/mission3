@@ -74,7 +74,7 @@ describe("Check API1 and the calculateValue function against test cases", () => 
       year: -900,
     });
     const expectedResult = {
-      error: "Invalid input. Please provide a valid model and year.",
+      error: "there is an error.",
     };
     expect(response.body).toEqual(expectedResult);
   });
@@ -84,7 +84,7 @@ describe("Check API1 and the calculateValue function against test cases", () => 
       year: "Civic",
     });
     const expectedResult = {
-      error: "Invalid input. Please provide a valid model and year.",
+      error: "there is an error.",
     };
     expect(response.body).toEqual(expectedResult);
   });
@@ -233,6 +233,7 @@ describe("Check API3 and the calculatequote function against test cases", () => 
       .expect(400);
     const expectedResult = { error: "there is an error" };
     expect(response.body).toEqual(expectedResult);
+    
   });
   it("#5 should return an error if nothing is sent", async () => {
     const response = await request(app)
@@ -240,6 +241,7 @@ describe("Check API3 and the calculatequote function against test cases", () => 
       .send({
       })
       .expect(400);
+      console.log(response)
     const expectedResult = { error: "there is an error" };
     expect(response.body).toEqual(expectedResult);
   });

@@ -7,11 +7,7 @@ router.post("/", async (req, res) => {
   try {
     const { model, year } = req.body;
     if (typeof model !== "string" || typeof year !== "number" || year < 0) {
-      return res
-        .status(400)
-        .json({
-          error: "Invalid input. Please provide a valid model and year.",
-        });
+      throw new Error("invalid model must be a string, year must be a number");
     }
     // Convert model to lowercase
     const carModel = model.toLowerCase();
@@ -27,7 +23,7 @@ router.post("/", async (req, res) => {
     const carValue = modelValue * 100 + year;
     return res.status(200).json({ car_value: carValue });
   } catch (error) {
-    return res.status(500).json({ error: "Error in calculateValue route." });
+    return res.status(500).json({ error: "there is an error." });
   }
 });
 module.exports = router;

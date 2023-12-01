@@ -7,7 +7,7 @@ router.post("/", async (req, res) => {
     const value = req.body.car_value;
     const risk = req.body.risk_rating;
     if (typeof value !== "number" || typeof risk !== "number") {
-      return res.status(400).json({ error: "there is an error" });
+      throw new Error('Invalid type, only numbers allowed');
     }
     const yearly = (value * risk) / 100;
     const monthly = yearly / 12;
@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
     };
     res.json(result);
   } catch (error) {
-    return res.status(400).json({ error: "there is a catch error" });
+    return res.status(400).json({ error: "there is an error" });
   }
 });
 module.exports = router;

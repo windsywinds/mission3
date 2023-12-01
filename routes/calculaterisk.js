@@ -7,8 +7,7 @@ router.post("/", async (req, res) => {
   const { claim_history } = req.body;
   try {
     if (typeof claim_history !== "string") {
-      res.status(400).json({ error: "there is an error" });
-      return;
+      throw new Error("input must be a string");
     }
     const triggerWords = ["collide", "crash", "scratch", "bump", "smash"];
     let count = 0;
